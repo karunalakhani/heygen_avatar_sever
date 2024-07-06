@@ -1,4 +1,4 @@
-equire("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -7,16 +7,12 @@ const port = 3001;
 
 const API_KEY = process.env.API_KEY; // Read the API key from environment variables
 
-app.use(cors()); // Enable CORS
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+// Enable CORS for all origins
+app.use(cors());
 
 app.get("/get-access-token", async (req, res) => {
   try {
-    //Ask the server for a secure Access Token
+    // Ask the server for a secure Access Token
     const response = await axios.post(
       "https://api.heygen.com/v1/streaming.create_token",
       {},
