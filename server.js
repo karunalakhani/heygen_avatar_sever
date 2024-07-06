@@ -8,6 +8,12 @@ const port = 3001;
 const API_KEY = process.env.API_KEY; // Read the API key from environment variables
 
 app.use(cors()); // Enable CORS
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.get("/get-access-token", async (req, res) => {
   try {
     //Ask the server for a secure Access Token
