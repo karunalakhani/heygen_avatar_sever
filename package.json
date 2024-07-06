@@ -1,18 +1,24 @@
 {
-  "name": "secure-api-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.7.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2"
-  }
+    "name": "heygen-streaming-avatar-typescript-demo",
+    "version": "1.0.0",
+    "scripts": {
+        "postinstall": "npm install --prefix client && npm install --prefix server",
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "client": "cd client && npm start",
+        "server": "cd server && npm start"
+    },
+    "devDependencies": {
+      "concurrently": "^6.0.0",
+      "react-app-rewired": "^2.1.8",
+      "path-browserify": "^1.0.1",
+      "os-browserify": "^0.3.0",
+      "crypto-browserify": "^3.12.0"
+    },
+    "dependencies": {
+      "concurrently": "^6.0.0",
+      "react-app-rewired": "^2.1.8",
+      "path-browserify": "^1.0.1",
+      "os-browserify": "^0.3.0",
+      "crypto-browserify": "^3.12.0"
+    }
 }
