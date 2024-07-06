@@ -8,12 +8,6 @@ const port = 3001;
 const API_KEY = process.env.API_KEY; // Read the API key from environment variables
 
 app.use(cors()); // Enable CORS
-app.use(
-  cors({
-    origin: "https://heygen-avatar.vercel.app",
-  })
-);
-
 app.post("/get-access-token", async (req, res) => {
   try {
     //Ask the server for a secure Access Token
